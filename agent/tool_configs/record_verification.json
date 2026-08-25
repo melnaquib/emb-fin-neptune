@@ -1,0 +1,43 @@
+{
+    "name": "record_verification",
+    "description": "Record the outcome of this invoice verification call: whether the issuer confirmed the invoice is correct and genuine, or denied it / flagged a detail as wrong. Call this exactly once, after you have an explicit confirm-or-deny answer from the person you are speaking with.",
+    "type": "webhook",
+    "api_schema": {
+        "url": "https://replace-with-your-public-url.example.com/tools/record-verification",
+        "method": "POST",
+        "request_body_schema": {
+            "type": "object",
+            "description": "Request body for the record_verification webhook",
+            "properties": {
+                "conversation_id": {
+                    "type": "string",
+                    "is_system_provided": true
+                },
+                "invoice_id": {
+                    "type": "string",
+                    "description": "The invoice_id being verified on this call, from the call's own dynamic variables context."
+                },
+                "outcome": {
+                    "type": "string",
+                    "description": "'confirmed' if the issuer verified the invoice is correct and genuine, 'denied' if they said any detail is wrong or that they did not issue it.",
+                    "enum": ["confirmed", "denied"]
+                },
+                "evidence": {
+                    "type": "string",
+                    "description": "Short factual summary of what the person said, quoting the specific disputed detail if there was one."
+                }
+            },
+            "required": ["conversation_id", "invoice_id", "outcome", "evidence"]
+        },
+        "request_headers": {
+            "Content-Type": "application/json"
+        }
+    },
+    "response_timeout_secs": 30,
+    "dynamic_variables": {
+        "dynamic_variable_placeholders": {}
+    },
+    "assignments": [],
+    "disable_interruptions": false,
+    "force_pre_tool_speech": false
+}

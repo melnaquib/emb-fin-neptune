@@ -1,0 +1,54 @@
+{
+    "name": "records-verification-with-correct-invoice-id",
+    "dynamic_variables": {
+        "issuer_name": "Nordic Supplies AB",
+        "invoice_amount": "2500.00",
+        "currency": "SEK",
+        "ocr_reference": "1234567890136",
+        "due_date": "2026-09-15",
+        "our_company_name": "Acme Demo AB",
+        "contact_number": "+46701234567",
+        "invoice_id": "INV-001"
+    },
+    "chat_history": [
+        {
+            "role": "user",
+            "time_in_call_secs": 1,
+            "message": "Yes, speaking for Nordic Supplies AB. Yes, the amount, OCR reference, and due date you read out all match. That invoice is correct and it's from us."
+        }
+    ],
+    "success_condition": "The agent calls the record_verification tool exactly once, with invoice_id set to INV-001 (the invoice this call was placed for), outcome 'confirmed', and a non-empty evidence string.",
+    "success_examples": [
+        {
+            "response": "Thank you for confirming, I'll record that now.",
+            "type": "success"
+        }
+    ],
+    "failure_examples": [
+        {
+            "response": "Thanks, I'll note that down but won't record anything formally.",
+            "type": "failure"
+        },
+        {
+            "response": "I'll record this under invoice INV-002.",
+            "type": "failure"
+        }
+    ],
+    "tool_call_parameters": {
+        "parameters": [
+            {
+                "path": "invoice_id",
+                "eval": {
+                    "type": "exact",
+                    "expectedValue": "INV-001"
+                }
+            }
+        ],
+        "referenced_tool": {
+            "id": "tool_3301m0wj8ajrf3mvfe1pn6pbtvrb",
+            "type": "webhook"
+        },
+        "verify_absence": false
+    },
+    "type": "tool"
+}

@@ -1,0 +1,19 @@
+{
+    "tests": [
+        {
+            "config": "test_configs/issuer-confirms-invoice.json",
+            "type": "basic-llm",
+            "id": "test_4301m0wj17preshv10t0k0z9xgwb"
+        },
+        {
+            "config": "test_configs/issuer-disputes-amount.json",
+            "type": "basic-llm",
+            "id": "test_9801m0wj1k8rewra7wpg5nyjzpj9"
+        },
+        {
+            "config": "test_configs/records-verification-with-correct-invoice-id.json",
+            "type": "basic-llm",
+            "id": "test_7501m0wj1nhtewzr8b0gr86pypdm"
+        }
+    ]
+}

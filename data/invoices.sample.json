@@ -1,0 +1,22 @@
+[
+  {
+    "id": "INV-001",
+    "issuer_name": "Nordic Supplies AB",
+    "issuer_org_no": "5560123456",
+    "amount_minor": 250000,
+    "currency": "SEK",
+    "ocr_reference": "1234567890136",
+    "due_date": "2026-09-15",
+    "issuer_wallet_address": "https://ilp.interledger-test.dev/nordic-supplies"
+  },
+  {
+    "id": "INV-002",
+    "issuer_name": "Baltic Traders OU",
+    "issuer_org_no": "5567654321",
+    "amount_minor": 520000,
+    "currency": "EUR",
+    "ocr_reference": "9876543210938",
+    "due_date": "2026-09-20",
+    "issuer_wallet_address": "https://ilp.interledger-test.dev/baltic-traders"
+  }
+]

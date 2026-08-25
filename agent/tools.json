@@ -1,0 +1,9 @@
+{
+    "tools": [
+        {
+            "type": "webhook",
+            "config": "tool_configs/record_verification.json",
+            "id": "tool_3301m0wj8ajrf3mvfe1pn6pbtvrb"
+        }
+    ]
+}
