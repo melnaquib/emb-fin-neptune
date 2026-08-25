@@ -1,0 +1,42 @@
+{
+    "name": "issuer-confirms-invoice",
+    "dynamic_variables": {
+        "issuer_name": "Nordic Supplies AB",
+        "invoice_amount": "2500.00",
+        "currency": "SEK",
+        "ocr_reference": "1234567890136",
+        "due_date": "2026-09-15",
+        "our_company_name": "Acme Demo AB",
+        "contact_number": "+46701234567",
+        "invoice_id": "INV-001"
+    },
+    "chat_history": [
+        {
+            "role": "user",
+            "time_in_call_secs": 1,
+            "message": "Yes, this is Nordic Supplies AB. Yes, the amount, OCR reference, and due date you just read out all match our records. That invoice is correct and it's from us."
+        }
+    ],
+    "success_condition": "The agent gets an explicit confirmation from the issuer that the invoice amount, OCR reference, and due date are correct and that they genuinely issued it, then calls the record_verification tool with outcome 'confirmed' and the correct invoice_id, then thanks the caller and ends the call without asking further unrelated questions.",
+    "success_examples": [
+        {
+            "response": "Thank you for confirming. I'll record this invoice as verified. Have a great day.",
+            "type": "success"
+        },
+        {
+            "response": "Great, that matches — I'm marking this as confirmed. Thanks for your time.",
+            "type": "success"
+        }
+    ],
+    "failure_examples": [
+        {
+            "response": "Great, let's discuss your other outstanding invoices too.",
+            "type": "failure"
+        },
+        {
+            "response": "I'm not sure, let me ask you more questions about unrelated topics.",
+            "type": "failure"
+        }
+    ],
+    "type": "llm"
+}

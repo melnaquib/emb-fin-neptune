@@ -1,0 +1,10 @@
+{
+    "agents": [
+        {
+            "config": "agent_configs/invoice-verifier.json",
+            "id": "agent_0601m0whxwtvf19sq7d9zh5816n7",
+            "version_id": "agtvrsn_4601m0wjkn7rfyc9t8w220rc2bxr",
+            "branch_id": "agtbrch_9801m0whxytgf97tmzkcwpaz8zw0"
+        }
+    ]
+}

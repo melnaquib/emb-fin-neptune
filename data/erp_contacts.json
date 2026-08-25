@@ -1,0 +1,14 @@
+{
+  "5560123456": {
+    "issuer_name": "Nordic Supplies AB",
+    "phone": "+46701234567",
+    "erp_amount_minor": 250000,
+    "erp_currency": "SEK"
+  },
+  "5567654321": {
+    "issuer_name": "Baltic Traders OU",
+    "phone": "+37061234567",
+    "erp_amount_minor": 480000,
+    "erp_currency": "EUR"
+  }
+}

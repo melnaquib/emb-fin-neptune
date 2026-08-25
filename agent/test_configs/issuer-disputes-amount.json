@@ -1,0 +1,42 @@
+{
+    "name": "issuer-disputes-amount",
+    "dynamic_variables": {
+        "issuer_name": "Baltic Traders OU",
+        "invoice_amount": "5200.00",
+        "currency": "EUR",
+        "ocr_reference": "9876543210938",
+        "due_date": "2026-09-20",
+        "our_company_name": "Acme Demo AB",
+        "contact_number": "+37061234567",
+        "invoice_id": "INV-002"
+    },
+    "chat_history": [
+        {
+            "role": "user",
+            "time_in_call_secs": 1,
+            "message": "Yes, this is Baltic Traders. No, that amount is wrong — our invoice to you was for 4800.00 EUR, not 5200.00 EUR. Everything else looks right, but that invoice as you read it is not correct."
+        }
+    ],
+    "success_condition": "The agent notices the issuer has explicitly said the amount is wrong and the invoice as read out is not correct, and calls the record_verification tool with outcome 'denied' and the correct invoice_id, citing the amount mismatch as evidence, then ends the call.",
+    "success_examples": [
+        {
+            "response": "I see — you're saying the amount should be 4800.00 EUR, not 5200.00 EUR as we have it. I'll record this invoice as not verified due to the amount mismatch. Thank you for catching that.",
+            "type": "success"
+        },
+        {
+            "response": "Understood, there's a discrepancy on the amount. I'm marking this invoice as denied so our team can follow up. Thanks for your time.",
+            "type": "success"
+        }
+    ],
+    "failure_examples": [
+        {
+            "response": "Great, that matches, I'm marking this as confirmed.",
+            "type": "failure"
+        },
+        {
+            "response": "Okay, no problem, I'll just go ahead and pay the original amount anyway.",
+            "type": "failure"
+        }
+    ],
+    "type": "llm"
+}
