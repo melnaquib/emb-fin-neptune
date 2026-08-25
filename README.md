@@ -1,4 +1,6 @@
-# emb-fin-neptune
+# Neptune
+Accounts Payable invoice checker call agent.
+
 ## Problem
 
 Accounts payable is the softest target in B2B finance. Invoices arrive as PDFs from
